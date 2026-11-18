@@ -9,7 +9,7 @@ public class DragonMovement : MonoBehaviour
     public bool goingUp = true;
 
     //rat/fireball timers
-    private float ratWait = 3, fireballWait = .5f;
+    private float ratWait = 3f, fireballWait = 3f;
     private float ratTimer = 0, fireballTimer = 0;
 
     public GameObject rat;
