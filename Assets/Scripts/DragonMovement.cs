@@ -39,7 +39,7 @@ public class DragonMovement : MonoBehaviour
             Vector2 spawnPos = (Vector2)transform.position + (Vector2)transform.right * spawnDistance;
             Instantiate(fireball, spawnPos, transform.rotation);
             fireballTimer = 0;
-            fireballWait = Random.Range(.05f, .65f);
+            fireballWait = Random.Range(2f, 6f);
         }
 
         transform.Translate(transform.up * speed * Time.deltaTime);
@@ -56,7 +56,7 @@ public class DragonMovement : MonoBehaviour
             speed *= -1;
         }
 
-        if (scoreDam > 14999)
+        if (scoreDam > 4999)
         {
             SceneManager.LoadScene(gameOverSceneName);
         }

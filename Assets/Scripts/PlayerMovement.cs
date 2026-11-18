@@ -11,13 +11,12 @@ public class PlayerMovement : MonoBehaviour
     public float spawnDistance = 1;
     public GameObject fireballplayer;
     private float fireballTimer = 0;
-    private float fireballWait = 3;
+    private float fireballWait = 2;
 
     public TextMeshProUGUI scoreBox;
 
     public string gameOverSceneName = "GameOver";
 
-    public string easterEggSceneName = "EasterEgg";
 
    
     void Update()
@@ -32,11 +31,11 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.Translate(-transform.up * speed * Time.deltaTime);
         }
-        if((Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.LeftArrow) )&& transform.position.x > -7)
+        if((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow) )&& transform.position.x > -7)
         {
             transform.Translate(-transform.right * speed * Time.deltaTime);
         }
-        if((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.RightArrow)) && transform.position.x < 0)
+        if((Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) && transform.position.x < 0)
         {
             transform.Translate(transform.right * speed * Time.deltaTime);
         }
@@ -51,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
             fireballTimer = 0;
         }
 
-        if (scoreVal > 14999)
+        if (scoreVal > 4999 || scoreVal <-4999)
         {
             SceneManager.LoadScene(gameOverSceneName);
         }
